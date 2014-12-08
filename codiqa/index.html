@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>OnTap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <link href="css/styles.css" rel="stylesheet">
+
+  <script src="js/scripts.js"></script>
+</head>
+<body>
+  <div data-role="page" data-control-title="Beer" id="page6">
+      <div id="Find" data-theme="f" data-role="header">
+          <h3>
+              Browse
+          </h3>
+      </div>
+      <div data-role="content">
+          <div data-controltype="textblock">
+              <p>
+                  <b>
+                      <br>
+                  </b>
+              </p>
+          </div>
+          <div style=" text-align:center" data-controltype="image">
+              <img style="width: 200px; height: 100px" src="img/ontap.png">
+          </div>
+          <div data-controltype="textblock">
+              <p>
+                  <b>
+                      <br>
+                  </b>
+              </p>
+          </div>
+          <div data-role="navbar" data-iconpos="top">
+              <ul>
+                  <li>
+                      <a href="#page5" data-transition="fade" data-theme="" data-icon="star">
+                          Find a Beer
+                      </a>
+                  </li>
+              </ul>
+          </div>
+          <div data-role="navbar" data-iconpos="top">
+              <ul>
+                  <li>
+                      <a href="#page3" data-transition="fade" data-theme="" data-icon="search">
+                          Find a Bar
+                      </a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+      <div data-role="tabbar" data-iconpos="bottom" data-theme="a">
+          <ul>
+              <li>
+                  <a href="#page6" data-transition="fade" data-theme="" data-icon="alert">
+                      Browse
+                  </a>
+              </li>
+              <li>
+                  <a href="#page4" data-transition="fade" data-theme="" data-icon="star">
+                      MyTap
+                  </a>
+              </li>
+              <li>
+                  <a href="#page5" data-transition="fade" data-theme="" data-icon="search">
+                      Search
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </div>
+  <div data-role="page" data-control-title="Find" id="page3">
+      <div data-theme="f" data-role="header" data-position="fixed">
+          <h3>
+              Find a Bar
+          </h3>
+      </div>
+      <div data-role="content">
+          <div data-role="fieldcontain" data-controltype="searchinput">
+              <input name="" id="searchinput1" placeholder="Search by ZIP, city or state..."
+              value="" type="search">
+          </div>
+          <div id="googlemapsjs1" class="google-map" style="width: 288px; height: 250px; margin-left: auto; margin-right: auto">
+          </div>
+          <script type="text/javascript">
+                  window.CodiqaControls && window.CodiqaControls.register('googlemaps', 'googlemapsjs1', {
+              ready: function(control) {
+  
+                  control.options = {
+                      zoom: 10,
+                      mapTypeId: google.maps.MapTypeId.ROADMAP
+                  };
+  
+                  control.el = document.getElementById(control._id);
+                  control.map = new google.maps.Map(control.el, control.options);
+  
+                  var geocoder = new google.maps.Geocoder();
+                  geocoder.geocode({
+                      'address': 'Henrietta, NY'
+                  }, function(results, status) {
+                      if (status == google.maps.GeocoderStatus.OK) {
+  
+                          var marker = new google.maps.Marker({
+                              map: control.map,
+                              position: results[0].geometry.location
+                          });
+                          control.center = results[0].geometry.location;
+                          control.map.setCenter(control.center);
+                      }
+                  });
+  
+              }
+          });
+          </script>
+          <h2>
+              Bars by Location
+          </h2>
+          <hr style="height:3px; background-color:#ccc; border:0; margin-top:12px; margin-bottom:12px;">
+          <div data-controltype="textblock">
+              <div data-list-index="1" jsaction="mousemove:categorical.hoverListItem;mouseout:categorical.unhoverListItem;focus:categorical.hoverListItem;blur:categorical.unhoverListItem"
+              jsinstance="1" jsl="$x 4;" jstid="74">
+                  <div data-entity-title="Jeffrey's Bar" data-entity-featureid="0x89d14bca1cfc1765:0x54430f5349f1f1f"
+                  jsaction="categorical.topResultClick" ved="0CAYQ8BcoADAA" vet="8982" class="cards-categorical-list-item"
+                  jsl="$x 6;$t t-pv18NtGjlwk;$x 0;" jstid="105">
+                      <div class="cards-categorical-list-item-title cards-strong" jsl="$x 3;"
+                      jsan="7.cards-categorical-list-item-title,7.cards-strong" jstid="78">
+                          <span jsl="$x 4;" jstid="79">
+                              Jeffrey's Bar
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-title cards-strong" jsl="$x 3;"
+                      jsan="7.cards-categorical-list-item-title,7.cards-strong" jstid="78">
+                          <span jsl="$x 4;" jstid="79">
+                              Bar
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-info-line-1">
+                          <div class="cards-categorical-list-item-rating" jsl="$x 5;" jstid="80">
+                              <div class="cards-rating-div" jsl="$x 6;$t t-qdWvO-XOmN4;$x 0;" jstid="88">
+                                  3115 E Henrietta Rd, Henrietta, NY 14467
+                              </div>
+                          </div>
+                      </div>
+                      <img src="https://lh6.googleusercontent.com/-trZqTmq82kQ/Tg_OWaRZxwI/AAAAAAAAAB0/JIX1cDM18vw/w176-h176-p/IMAG2288%2B%28640x383%29.jpg"
+                      class="cards-categorical-list-item-image" jsl="$x 22;" jstid="104" data-mce-src="https://lh6.googleusercontent.com/-trZqTmq82kQ/Tg_OWaRZxwI/AAAAAAAAAB0/JIX1cDM18vw/w176-h176-p/IMAG2288%2B%28640x383%29.jpg">
+                  </div>
+              </div>
+              <div data-list-index="2" jsaction="mousemove:categorical.hoverListItem;mouseout:categorical.unhoverListItem;focus:categorical.hoverListItem;blur:categorical.unhoverListItem"
+              jsinstance="2" jsl="$x 4;" jstid="107">
+                  <hr class="horizontal-line cards-categorical-list-item-line" jsl="$x 5;"
+                  jstid="108">
+                  <div data-entity-title="Nashville's" data-entity-featureid="0x89d14c081b8a6f6f:0x2b83c23f86753e58"
+                  jsaction="categorical.topResultClick" ved="0CCMQ8BcoADAB" vet="8982" class="cards-categorical-list-item"
+                  jsl="$x 6;$t t-pv18NtGjlwk;$x 0;" jstid="131">
+                      <div class="cards-categorical-list-item-title cards-strong" jsl="$x 3;"
+                      jsan="7.cards-categorical-list-item-title,7.cards-strong" jstid="111">
+                          <span jsl="$x 4;" jstid="112">
+                              Nashville's&nbsp;
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-title cards-strong" jsl="$x 3;"
+                      jsan="7.cards-categorical-list-item-title,7.cards-strong" jstid="111">
+                          <span jsl="$x 4;" jstid="112">
+                          </span>
+                          Country Club
+                      </div>
+                      <div class="cards-categorical-list-item-address" jsl="$x 20;" jstid="128">
+                          <span jsl="$x 21;" jstid="129">
+                              4853 W Henrietta Rd, Henrietta, NY 14467
+                          </span>
+                      </div>
+                      <img src="https://maps.gstatic.com/tactile/omnibox/list-result-no-thumbnail-2x.png"
+                      class="cards-categorical-list-item-image" jsl="$x 22;" jstid="130" data-mce-src="https://maps.gstatic.com/tactile/omnibox/list-result-no-thumbnail-2x.png">
+                  </div>
+              </div>
+              <div data-list-index="3" jsaction="mousemove:categorical.hoverListItem;mouseout:categorical.unhoverListItem;focus:categorical.hoverListItem;blur:categorical.unhoverListItem"
+              jsinstance="3" jsl="$x 4;" jstid="133">
+                  <hr class="horizontal-line cards-categorical-list-item-line" jsl="$x 5;"
+                  jstid="134">
+                  <div data-entity-title="McKenzie's Irish Pub" data-entity-featureid="0x89d14b9d403a3521:0x73e99d62c899cb1c"
+                  jsaction="categorical.topResultClick" ved="0CD0Q8BcoADAC" vet="8982" class="cards-categorical-list-item"
+                  jsl="$x 6;$t t-pv18NtGjlwk;$x 0;" jstid="163">
+                      <div class="cards-categorical-list-item-title cards-strong" jsl="$x 3;"
+                      jsan="7.cards-categorical-list-item-title,7.cards-strong" jstid="137">
+                          <span jsl="$x 4;" jstid="138">
+                              McKenzie's Irish Pub
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-title cards-strong" jsl="$x 3;"
+                      jsan="7.cards-categorical-list-item-title,7.cards-strong" jstid="137">
+                          <span jsl="$x 4;" jstid="138">
+                              Bar
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-address" jsl="$x 20;" jstid="160">
+                          <span jsl="$x 21;" jstid="161">
+                              3685 W Henrietta Rd, Rochester, NY 14623
+                          </span>
+                      </div>
+                      <img src="https://maps.gstatic.com/tactile/omnibox/list-result-no-thumbnail-2x.png"
+                      class="cards-categorical-list-item-image" jsl="$x 22;" jstid="162" data-mce-src="https://maps.gstatic.com/tactile/omnibox/list-result-no-thumbnail-2x.png">
+                  </div>
+              </div>
+              <div data-list-index="4" jsaction="mousemove:categorical.hoverListItem;mouseout:categorical.unhoverListItem;focus:categorical.hoverListItem;blur:categorical.unhoverListItem"
+              jsinstance="4" jsl="$x 4;" jstid="165">
+                  <hr class="horizontal-line cards-categorical-list-item-line" jsl="$x 5;"
+                  jstid="166">
+                  <div data-entity-title="Klassy Cat" data-entity-featureid="0x89d14b9c9717db57:0xb7bf3618872466cf"
+                  jsaction="categorical.topResultClick" ved="0CE8Q8BcoADAD" vet="8982" class="cards-categorical-list-item"
+                  jsl="$x 6;$t t-pv18NtGjlwk;$x 0;" jstid="195">
+                      <div class="cards-categorical-list-item-title cards-strong" jsl="$x 3;"
+                      jsan="7.cards-categorical-list-item-title,7.cards-strong" jstid="169">
+                          <span jsl="$x 4;" jstid="170">
+                              Klassy Cat
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-title cards-strong" jsl="$x 3;"
+                      jsan="7.cards-categorical-list-item-title,7.cards-strong" jstid="169">
+                          <span jsl="$x 4;" jstid="170">
+                              Adult Entertainment Club
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-info-line-1">
+                          <span class="cards-categorical-separator" jsl="$x 8;" jsan="7.cards-categorical-separator"
+                          jstid="180">
+                              <span class="cards-categorical-list-item-category" jsl="$x 9;" jsan="7.cards-categorical-list-item-category"
+                              jstid="181">
+                                  3800 W Henrietta Rd, Rochester, NY 14623
+                              </span>
+                          </span>
+                      </div>
+                      <img src="https://lh5.googleusercontent.com/-qyihyovAbmk/VD0vRURu9lI/AAAAAAABJvs/r5lwCMafQ5E/w176-h176-p/photo.jpg"
+                      class="cards-categorical-list-item-image" jsl="$x 22;" jstid="194" data-mce-src="https://lh5.googleusercontent.com/-qyihyovAbmk/VD0vRURu9lI/AAAAAAABJvs/r5lwCMafQ5E/w176-h176-p/photo.jpg">
+                  </div>
+              </div>
+              <div data-list-index="5" jsaction="mousemove:categorical.hoverListItem;mouseout:categorical.unhoverListItem;focus:categorical.hoverListItem;blur:categorical.unhoverListItem"
+              jsinstance="5" jsl="$x 4;" jstid="197">
+                  <hr class="horizontal-line cards-categorical-list-item-line" jsl="$x 5;"
+                  jstid="198">
+                  <div data-entity-title="Fireside Grill &amp; Sports Bar" data-entity-featureid="0x89d14bd9b10cc47f:0xf32a343031e680cf"
+                  jsaction="categorical.topResultClick" ved="0CG0Q8BcoADAE" vet="8982" class="cards-categorical-list-item"
+                  jsl="$x 6;$t t-pv18NtGjlwk;$x 0;" jstid="221">
+                      <div class="cards-categorical-list-item-title cards-strong" jsl="$x 3;"
+                      jsan="7.cards-categorical-list-item-title,7.cards-strong" jstid="201">
+                          <span jsl="$x 4;" jstid="202">
+                              Fireside Grill &amp; Sports Bar
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-title cards-strong" jsl="$x 3;"
+                      jsan="7.cards-categorical-list-item-title,7.cards-strong" jstid="201">
+                          <span jsl="$x 4;" jstid="202">
+                              Restaurant
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-info-line-1">
+                          <span jsl="$x 8;" jstid="206">
+                              <span class="cards-categorical-list-item-category" jsl="$x 9;" jsan="7.cards-categorical-list-item-category"
+                              jstid="207">
+                                  3939 E Henrietta Rd, Henrietta, NY 14467
+                              </span>
+                          </span>
+                      </div>
+                      <img src="https://lh4.googleusercontent.com/-YdfkdAjUL_Q/VGJOdU4IYBI/AAAAAAAAAAY/GokISL_Y6hk/w176-h176-p/542248_1377337592490956_1252981838_n.jpg"
+                      class="cards-categorical-list-item-image" jsl="$x 22;" jstid="220" data-mce-src="https://lh4.googleusercontent.com/-YdfkdAjUL_Q/VGJOdU4IYBI/AAAAAAAAAAY/GokISL_Y6hk/w176-h176-p/542248_1377337592490956_1252981838_n.jpg">
+                  </div>
+              </div>
+              <div data-list-index="6" jsaction="mousemove:categorical.hoverListItem;mouseout:categorical.unhoverListItem;focus:categorical.hoverListItem;blur:categorical.unhoverListItem"
+              jsinstance="6" jsl="$x 4;" jstid="223">
+                  <hr class="horizontal-line cards-categorical-list-item-line" jsl="$x 5;"
+                  jstid="224">
+                  <div data-entity-title="Buffalo Wild Wings" data-entity-featureid="0x89d14b0541a09eff:0xaf555c27d255c400"
+                  jsaction="categorical.topResultClick" ved="0CIcBEPAXKAAwBQ" vet="8982"
+                  class="cards-categorical-list-item" jsl="$x 6;$t t-pv18NtGjlwk;$x 0;" jstid="253">
+                      <div class="cards-categorical-list-item-title cards-strong" jsl="$x 3;"
+                      jsan="7.cards-categorical-list-item-title,7.cards-strong" jstid="227">
+                          <span jsl="$x 4;" jstid="228">
+                              Buffalo Wild Wings
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-info-line-1">
+                          <span class="cards-categorical-separator" jsl="$x 8;" jsan="7.cards-categorical-separator"
+                          jstid="238">
+                              <span class="cards-categorical-list-item-category" jsl="$x 9;" jsan="7.cards-categorical-list-item-category"
+                              jstid="239">
+                                  Chicken Wings Restaurant
+                              </span>
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-overview" jsl="$x 16;" jsan="7.cards-categorical-list-item-overview"
+                      jstid="246">
+                          Sports-bar chain serving American fare
+                      </div>
+                      <div class="cards-categorical-list-item-address" jsl="$x 20;" jstid="250">
+                          <span jsl="$x 21;" jstid="251">
+                              780 Jefferson Rd, Rochester, NY 14623
+                          </span>
+                      </div>
+                      <img src="https://lh3.googleusercontent.com/-JeSRZfe5pQY/U7jbCcdtw2I/AAAAAAAA3AY/tzW0_6NYob4/w176-h176-p/photo.jpg"
+                      class="cards-categorical-list-item-image" jsl="$x 22;" jstid="252" data-mce-src="https://lh3.googleusercontent.com/-JeSRZfe5pQY/U7jbCcdtw2I/AAAAAAAA3AY/tzW0_6NYob4/w176-h176-p/photo.jpg">
+                  </div>
+              </div>
+              <div data-list-index="7" jsaction="mousemove:categorical.hoverListItem;mouseout:categorical.unhoverListItem;focus:categorical.hoverListItem;blur:categorical.unhoverListItem"
+              jsinstance="7" jsl="$x 4;" jstid="255">
+                  <hr class="horizontal-line cards-categorical-list-item-line" jsl="$x 5;"
+                  jstid="256">
+                  <div data-entity-title="Papaya Asian Kitchen &amp; Bar" data-entity-featureid="0x89d14b7514fbdc63:0x6f116d1666b057b9"
+                  jsaction="categorical.topResultClick" ved="0CKcBEPAXKAAwBg" vet="8982"
+                  class="cards-categorical-list-item" jsl="$x 6;$t t-pv18NtGjlwk;$x 0;" jstid="286">
+                      <div class="cards-categorical-list-item-title cards-strong" jsl="$x 3;"
+                      jsan="7.cards-categorical-list-item-title,7.cards-strong" jstid="259">
+                          <span jsl="$x 4;" jstid="260">
+                              Papaya Asian Kitchen &amp; Bar
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-info-line-1">
+                          <span class="cards-categorical-separator" jsl="$x 8;" jsan="7.cards-categorical-separator"
+                          jstid="271">
+                              <span class="cards-categorical-list-item-category" jsl="$x 9;" jsan="7.cards-categorical-list-item-category"
+                              jstid="272">
+                                  Bar
+                              </span>
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-address" jsl="$x 20;" jstid="283">
+                          <span jsl="$x 21;" jstid="284">
+                              270 Miracle Mile Dr, Rochester, NY 14623
+                          </span>
+                      </div>
+                      <img src="https://lh3.googleusercontent.com/-eRcQti7WPP0/UsXK1HYd8hI/AAAAAAAAZLI/UEWwMQ69vsw/w176-h176-p/photo.jpg"
+                      class="cards-categorical-list-item-image" jsl="$x 22;" jstid="285" data-mce-src="https://lh3.googleusercontent.com/-eRcQti7WPP0/UsXK1HYd8hI/AAAAAAAAZLI/UEWwMQ69vsw/w176-h176-p/photo.jpg">
+                  </div>
+              </div>
+              <div data-list-index="8" jsaction="mousemove:categorical.hoverListItem;mouseout:categorical.unhoverListItem;focus:categorical.hoverListItem;blur:categorical.unhoverListItem"
+              jsinstance="8" jsl="$x 4;" jstid="288">
+                  <hr class="horizontal-line cards-categorical-list-item-line" jsl="$x 5;"
+                  jstid="289">
+                  <div data-entity-title="MacGregors' Grill &amp; Tap Room" data-entity-featureid="0x89d14b7cd747a46f:0x6966071bacc3931f"
+                  jsaction="categorical.topResultClick" ved="0CMMBEPAXKAAwBw" vet="8982"
+                  class="cards-categorical-list-item" jsl="$x 6;$t t-pv18NtGjlwk;$x 0;" jstid="318">
+                      <div class="cards-categorical-list-item-title cards-strong" jsl="$x 3;"
+                      jsan="7.cards-categorical-list-item-title,7.cards-strong" jstid="292">
+                          <span jsl="$x 4;" jstid="293">
+                              MacGregors' Grill &amp; Tap Room
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-info-line-1">
+                          <span class="cards-categorical-separator" jsl="$x 8;" jsan="7.cards-categorical-separator"
+                          jstid="303">
+                              <span class="cards-categorical-list-item-category" jsl="$x 9;" jsan="7.cards-categorical-list-item-category"
+                              jstid="304">
+                                  Bar &amp; Grill
+                              </span>
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-overview" jsl="$x 16;" jsan="7.cards-categorical-list-item-overview"
+                      jstid="311">
+                          Sports bar &amp; grill aimed at beer lovers
+                      </div>
+                      <div class="cards-categorical-list-item-address" jsl="$x 20;" jstid="315">
+                          <span jsl="$x 21;" jstid="316">
+                              300 Jefferson Rd, Rochester, NY 14623
+                          </span>
+                      </div>
+                      <img src="https://lh6.googleusercontent.com/-wx2Tum8H6js/U-JgpVIax2I/AAAAAAAA8co/DfNvAQAqCOM/w176-h176-p/photo.jpg"
+                      class="cards-categorical-list-item-image" jsl="$x 22;" jstid="317" data-mce-src="https://lh6.googleusercontent.com/-wx2Tum8H6js/U-JgpVIax2I/AAAAAAAA8co/DfNvAQAqCOM/w176-h176-p/photo.jpg">
+                  </div>
+              </div>
+              <div data-list-index="9" jsaction="mousemove:categorical.hoverListItem;mouseout:categorical.unhoverListItem;focus:categorical.hoverListItem;blur:categorical.unhoverListItem"
+              jsinstance="9" jsl="$x 4;" jstid="320">
+                  <hr class="horizontal-line cards-categorical-list-item-line" jsl="$x 5;"
+                  jstid="321">
+                  <div data-entity-title="The Distillery" data-entity-featureid="0x89d14abe398a5631:0x97823e3205fc350d"
+                  jsaction="categorical.topResultClick" ved="0COUBEPAXKAAwCA" vet="8982"
+                  class="cards-categorical-list-item" jsl="$x 6;$t t-pv18NtGjlwk;$x 0;" jstid="350">
+                      <div class="cards-categorical-list-item-title cards-strong" jsl="$x 3;"
+                      jsan="7.cards-categorical-list-item-title,7.cards-strong" jstid="324">
+                          <span jsl="$x 4;" jstid="325">
+                              The Distillery
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-info-line-1">
+                          <span class="cards-categorical-separator" jsl="$x 8;" jsan="7.cards-categorical-separator"
+                          jstid="335">
+                              <span class="cards-categorical-list-item-category" jsl="$x 9;" jsan="7.cards-categorical-list-item-category"
+                              jstid="336">
+                                  American Restaurant
+                              </span>
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-overview" jsl="$x 16;" jsan="7.cards-categorical-list-item-overview"
+                      jstid="343">
+                          High-energy hangout for sports &amp; brews
+                      </div>
+                      <div class="cards-categorical-list-item-address" jsl="$x 20;" jstid="347">
+                          <span jsl="$x 21;" jstid="348">
+                              3010 S Winton Rd, Rochester, NY 14623
+                          </span>
+                      </div>
+                      <img src="https://lh3.googleusercontent.com/-24FIeK6Szto/UyI7GMgkCbI/AAAAAAAQCD0/b5GaMmrU4Ow/w176-h176-p/photo.jpg"
+                      class="cards-categorical-list-item-image" jsl="$x 22;" jstid="349" data-mce-src="https://lh3.googleusercontent.com/-24FIeK6Szto/UyI7GMgkCbI/AAAAAAAQCD0/b5GaMmrU4Ow/w176-h176-p/photo.jpg">
+                  </div>
+              </div>
+              <div data-list-index="10" jsaction="mousemove:categorical.hoverListItem;mouseout:categorical.unhoverListItem;focus:categorical.hoverListItem;blur:categorical.unhoverListItem"
+              jsinstance="*10" jsl="$x 4;" jstid="352">
+                  <hr class="horizontal-line cards-categorical-list-item-line" jsl="$x 5;"
+                  jstid="353">
+                  <div data-entity-title="The Melting Pot" data-entity-featureid="0x89d14b75500865b3:0x9bcc98c25f1cdef0"
+                  jsaction="categorical.topResultClick" ved="0CIUCEPAXKAAwCQ" vet="8982"
+                  class="cards-categorical-list-item" jsl="$x 6;$t t-pv18NtGjlwk;$x 0;" jstid="383">
+                      <div class="cards-categorical-list-item-title cards-strong" jsl="$x 3;"
+                      jsan="7.cards-categorical-list-item-title,7.cards-strong" jstid="356">
+                          <span jsl="$x 4;" jstid="357">
+                              The Melting Pot
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-info-line-1">
+                          <span class="cards-categorical-separator" jsl="$x 8;" jsan="7.cards-categorical-separator"
+                          jstid="368">
+                              <span class="cards-categorical-list-item-category" jsl="$x 9;" jsan="7.cards-categorical-list-item-category"
+                              jstid="369">
+                                  Fondue Restaurant
+                              </span>
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-overview" jsl="$x 16;" jsan="7.cards-categorical-list-item-overview"
+                      jstid="376">
+                          Casual restaurant chain for fondue meals
+                      </div>
+                      <div class="cards-categorical-list-item-address" jsl="$x 20;" jstid="380">
+                          <span jsl="$x 21;" jstid="381">
+                              290 Miracle Mile Dr, Rochester, NY 14623
+                          </span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div data-role="tabbar" data-iconpos="bottom" data-theme="a">
+          <ul>
+              <li>
+                  <a href="#page6" data-transition="fade" data-theme="" data-icon="alert">
+                      Browse
+                  </a>
+              </li>
+              <li>
+                  <a href="#page4" data-transition="fade" data-theme="" data-icon="star">
+                      MyTap
+                  </a>
+              </li>
+              <li>
+                  <a href="#page5" data-transition="fade" data-theme="" data-icon="search">
+                      Search
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </div>
+  <div data-role="page" data-control-title="Account" id="page4">
+      <div data-role="panel" id="panel2" data-position="left" data-display="reveal"
+      data-theme="a">
+          <ul data-role="listview" data-divider-theme="h" data-inset="false">
+              <li data-role="list-divider" role="heading">
+                  More
+              </li>
+              <li data-theme="a">
+                  <a href="#page1" data-transition="slide">
+                      Messenger
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#page1" data-transition="slide">
+                      Notifications
+                  </a>
+              </li>
+          </ul>
+      </div>
+      <div data-theme="f" data-role="header" data-position="fixed">
+          <a data-controltype="panelbutton" data-role="button" href="#panel2" data-icon="alert"
+          data-iconpos="left" class="ui-btn-left">
+              Notifications
+          </a>
+          <h3>
+              MyTap
+          </h3>
+      </div>
+      <div data-role="content">
+          <div class="ui-grid-a">
+              <div class="ui-block-a">
+                  <div style="display: inline text-align:right" data-controltype="image">
+                      <img style="width: 100px; height: 100px" src="img/beer_mug_clip_art_13660.jpg">
+                  </div>
+              </div>
+              <div class="ui-block-b">
+                  <h1>
+                      Drunk McGee
+                  </h1>
+              </div>
+          </div>
+          <hr style="height:3px; background-color:#ccc; border:0; margin-top:12px; margin-bottom:12px;">
+          <h2>
+              Drinking Buddies
+          </h2>
+          <div class="ui-grid-c">
+              <div class="ui-block-a">
+                  <div style="" data-controltype="image">
+                      <img style="width: 70px; height: 60px" src="img/gty_drunk_driver_mi_130108_wmain.jpg">
+                  </div>
+              </div>
+              <div class="ui-block-b">
+                  <div style="" data-controltype="image">
+                      <img style="width: 70px; height: 60px" src="img/obama-drinking-beer.jpg">
+                  </div>
+              </div>
+              <div class="ui-block-c">
+                  <div style="" data-controltype="image">
+                      <img style="width: 70px; height: 60px" src="img/stock-footage-young-man-drinking-cold-beer.jpg">
+                  </div>
+              </div>
+              <div class="ui-block-d">
+                  <div style="" data-controltype="image">
+                      <img style="width: 70px; height: 60px" src="img/images.jpg">
+                  </div>
+              </div>
+              <div class="ui-block-a">
+                  <div data-controltype="textblock">
+                      <p>
+                          McLovin
+                      </p>
+                  </div>
+              </div>
+              <div class="ui-block-b">
+                  <div data-controltype="textblock">
+                      <p>
+                          Sarah Parker
+                      </p>
+                  </div>
+              </div>
+              <div class="ui-block-c">
+                  <div data-controltype="textblock">
+                      <p>
+                          Jim Thorpe
+                      </p>
+                  </div>
+              </div>
+              <div class="ui-block-d">
+                  <div data-controltype="textblock">
+                      <p>
+                          Papa John
+                      </p>
+                  </div>
+              </div>
+          </div>
+          <hr style="height:3px; background-color:#ccc; border:0; margin-top:12px; margin-bottom:12px;">
+          <h2>
+              Favorite Beers
+          </h2>
+          <div class="ui-grid-c">
+              <div class="ui-block-a">
+                  <a href="#page8" data-controltype="image">
+                      <div style="">
+                          <img style="width: 70px; height: 60px" src="img/beer_mug_clip_art_13660.jpg">
+                      </div>
+                  </a>
+              </div>
+              <div class="ui-block-b">
+                  <a href="#page9" data-controltype="image">
+                      <div style="">
+                          <img style="width: 70px; height: 60px" src="img/beer_mug_clip_art_13660.jpg">
+                      </div>
+                  </a>
+              </div>
+              <div class="ui-block-c">
+                  <div style="" data-controltype="image">
+                      <img style="width: 70px; height: 60px" src="img/beer_mug_clip_art_13660.jpg">
+                  </div>
+              </div>
+              <div class="ui-block-d">
+                  <div style="" data-controltype="image">
+                      <img style="width: 70px; height: 60px" src="img/beer_mug_clip_art_13660.jpg">
+                  </div>
+              </div>
+              <div class="ui-block-a">
+                  <div data-controltype="textblock">
+                      <p>
+                          60 Minute
+                      </p>
+                  </div>
+              </div>
+              <div class="ui-block-b">
+                  <div data-controltype="textblock">
+                      <p>
+                          &nbsp; PBR
+                      </p>
+                  </div>
+              </div>
+              <div class="ui-block-c">
+                  <div data-controltype="textblock">
+                      <p>
+                          Golden Monkey
+                      </p>
+                  </div>
+              </div>
+              <div class="ui-block-d">
+                  <div data-controltype="textblock">
+                      <p>
+                          Beer 4
+                      </p>
+                  </div>
+              </div>
+          </div>
+          <hr style="height:3px; background-color:#ccc; border:0; margin-top:12px; margin-bottom:12px;">
+          <h2>
+              Favorite Bars
+          </h2>
+          <div id="googlemapsjs3" class="google-map" style="width: 288px; height: 150px; margin-left: auto; margin-right: auto">
+          </div>
+          <script type="text/javascript">
+                  window.CodiqaControls && window.CodiqaControls.register('googlemaps', 'googlemapsjs3', {
+              ready: function(control) {
+  
+                  control.options = {
+                      zoom: 12,
+                      mapTypeId: google.maps.MapTypeId.ROADMAP
+                  };
+  
+                  control.el = document.getElementById(control._id);
+                  control.map = new google.maps.Map(control.el, control.options);
+  
+                  var geocoder = new google.maps.Geocoder();
+                  geocoder.geocode({
+                      'address': 'Rochester ny'
+                  }, function(results, status) {
+                      if (status == google.maps.GeocoderStatus.OK) {
+  
+                          var marker = new google.maps.Marker({
+                              map: control.map,
+                              position: results[0].geometry.location
+                          });
+                          control.center = results[0].geometry.location;
+                          control.map.setCenter(control.center);
+                      }
+                  });
+  
+              }
+          });
+          </script>
+          <h3>
+              By Location
+          </h3>
+          <div data-controltype="textblock">
+              <div data-list-index="1" jsaction="mousemove:categorical.hoverListItem;mouseout:categorical.unhoverListItem;focus:categorical.hoverListItem;blur:categorical.unhoverListItem"
+              jsinstance="1" jsl="$x 4;" jstid="74">
+                  <div data-entity-title="Jeffrey's Bar" data-entity-featureid="0x89d14bca1cfc1765:0x54430f5349f1f1f"
+                  jsaction="categorical.topResultClick" ved="0CAYQ8BcoADAA" vet="8982" class="cards-categorical-list-item"
+                  jsl="$x 6;$t t-pv18NtGjlwk;$x 0;" jstid="105">
+                      <div class="cards-categorical-list-item-title cards-strong" jsl="$x 3;"
+                      jsan="7.cards-categorical-list-item-title,7.cards-strong" jstid="78">
+                          <span jsl="$x 4;" jstid="79">
+                              Jeffrey's Bar
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-title cards-strong" jsl="$x 3;"
+                      jsan="7.cards-categorical-list-item-title,7.cards-strong" jstid="78">
+                          <span jsl="$x 4;" jstid="79">
+                              Bar
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-info-line-1">
+                          <div class="cards-categorical-list-item-rating" jsl="$x 5;" jstid="80">
+                              <div class="cards-rating-div" jsl="$x 6;$t t-qdWvO-XOmN4;$x 0;" jstid="88">
+                                  3115 E Henrietta Rd, Henrietta, NY 14467
+                              </div>
+                          </div>
+                      </div>
+                      <img src="https://lh6.googleusercontent.com/-trZqTmq82kQ/Tg_OWaRZxwI/AAAAAAAAAB0/JIX1cDM18vw/w176-h176-p/IMAG2288%2B%28640x383%29.jpg"
+                      class="cards-categorical-list-item-image" jsl="$x 22;" jstid="104" data-mce-src="https://lh6.googleusercontent.com/-trZqTmq82kQ/Tg_OWaRZxwI/AAAAAAAAAB0/JIX1cDM18vw/w176-h176-p/IMAG2288%2B%28640x383%29.jpg">
+                  </div>
+              </div>
+              <div data-list-index="2" jsaction="mousemove:categorical.hoverListItem;mouseout:categorical.unhoverListItem;focus:categorical.hoverListItem;blur:categorical.unhoverListItem"
+              jsinstance="2" jsl="$x 4;" jstid="107">
+                  <hr class="horizontal-line cards-categorical-list-item-line" jsl="$x 5;"
+                  jstid="108">
+                  <div data-entity-title="Nashville's" data-entity-featureid="0x89d14c081b8a6f6f:0x2b83c23f86753e58"
+                  jsaction="categorical.topResultClick" ved="0CCMQ8BcoADAB" vet="8982" class="cards-categorical-list-item"
+                  jsl="$x 6;$t t-pv18NtGjlwk;$x 0;" jstid="131">
+                      <div class="cards-categorical-list-item-title cards-strong" jsl="$x 3;"
+                      jsan="7.cards-categorical-list-item-title,7.cards-strong" jstid="111">
+                          <span jsl="$x 4;" jstid="112">
+                              Nashville's&nbsp;
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-title cards-strong" jsl="$x 3;"
+                      jsan="7.cards-categorical-list-item-title,7.cards-strong" jstid="111">
+                          <span jsl="$x 4;" jstid="112">
+                          </span>
+                          Country Club
+                      </div>
+                      <div class="cards-categorical-list-item-address" jsl="$x 20;" jstid="128">
+                          <span jsl="$x 21;" jstid="129">
+                              4853 W Henrietta Rd, Henrietta, NY 14467
+                          </span>
+                      </div>
+                      <img src="https://maps.gstatic.com/tactile/omnibox/list-result-no-thumbnail-2x.png"
+                      class="cards-categorical-list-item-image" jsl="$x 22;" jstid="130" data-mce-src="https://maps.gstatic.com/tactile/omnibox/list-result-no-thumbnail-2x.png">
+                  </div>
+              </div>
+              <div data-list-index="3" jsaction="mousemove:categorical.hoverListItem;mouseout:categorical.unhoverListItem;focus:categorical.hoverListItem;blur:categorical.unhoverListItem"
+              jsinstance="3" jsl="$x 4;" jstid="133">
+                  <hr class="horizontal-line cards-categorical-list-item-line" jsl="$x 5;"
+                  jstid="134">
+                  <div data-entity-title="McKenzie's Irish Pub" data-entity-featureid="0x89d14b9d403a3521:0x73e99d62c899cb1c"
+                  jsaction="categorical.topResultClick" ved="0CD0Q8BcoADAC" vet="8982" class="cards-categorical-list-item"
+                  jsl="$x 6;$t t-pv18NtGjlwk;$x 0;" jstid="163">
+                      <div class="cards-categorical-list-item-title cards-strong" jsl="$x 3;"
+                      jsan="7.cards-categorical-list-item-title,7.cards-strong" jstid="137">
+                          <span jsl="$x 4;" jstid="138">
+                              McKenzie's Irish Pub
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-title cards-strong" jsl="$x 3;"
+                      jsan="7.cards-categorical-list-item-title,7.cards-strong" jstid="137">
+                          <span jsl="$x 4;" jstid="138">
+                              Bar
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-address" jsl="$x 20;" jstid="160">
+                          <span jsl="$x 21;" jstid="161">
+                              3685 W Henrietta Rd, Rochester, NY 14623
+                          </span>
+                      </div>
+                      <img src="https://maps.gstatic.com/tactile/omnibox/list-result-no-thumbnail-2x.png"
+                      class="cards-categorical-list-item-image" jsl="$x 22;" jstid="162" data-mce-src="https://maps.gstatic.com/tactile/omnibox/list-result-no-thumbnail-2x.png">
+                  </div>
+              </div>
+              <div data-list-index="4" jsaction="mousemove:categorical.hoverListItem;mouseout:categorical.unhoverListItem;focus:categorical.hoverListItem;blur:categorical.unhoverListItem"
+              jsinstance="4" jsl="$x 4;" jstid="165">
+                  <hr class="horizontal-line cards-categorical-list-item-line" jsl="$x 5;"
+                  jstid="166">
+                  <div data-entity-title="Klassy Cat" data-entity-featureid="0x89d14b9c9717db57:0xb7bf3618872466cf"
+                  jsaction="categorical.topResultClick" ved="0CE8Q8BcoADAD" vet="8982" class="cards-categorical-list-item"
+                  jsl="$x 6;$t t-pv18NtGjlwk;$x 0;" jstid="195">
+                      <div class="cards-categorical-list-item-title cards-strong" jsl="$x 3;"
+                      jsan="7.cards-categorical-list-item-title,7.cards-strong" jstid="169">
+                          <span jsl="$x 4;" jstid="170">
+                              Klassy Cat
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-title cards-strong" jsl="$x 3;"
+                      jsan="7.cards-categorical-list-item-title,7.cards-strong" jstid="169">
+                          <span jsl="$x 4;" jstid="170">
+                              Adult Entertainment Club
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-info-line-1">
+                          <span class="cards-categorical-separator" jsl="$x 8;" jsan="7.cards-categorical-separator"
+                          jstid="180">
+                              3800 W Henrietta Rd, Rochester, NY 14623
+                          </span>
+                      </div>
+                      <img src="https://lh5.googleusercontent.com/-qyihyovAbmk/VD0vRURu9lI/AAAAAAABJvs/r5lwCMafQ5E/w176-h176-p/photo.jpg"
+                      class="cards-categorical-list-item-image" jsl="$x 22;" jstid="194" data-mce-src="https://lh5.googleusercontent.com/-qyihyovAbmk/VD0vRURu9lI/AAAAAAABJvs/r5lwCMafQ5E/w176-h176-p/photo.jpg">
+                  </div>
+              </div>
+              <div data-list-index="5" jsaction="mousemove:categorical.hoverListItem;mouseout:categorical.unhoverListItem;focus:categorical.hoverListItem;blur:categorical.unhoverListItem"
+              jsinstance="5" jsl="$x 4;" jstid="197">
+                  <hr class="horizontal-line cards-categorical-list-item-line" jsl="$x 5;"
+                  jstid="198">
+                  <div data-entity-title="Fireside Grill &amp; Sports Bar" data-entity-featureid="0x89d14bd9b10cc47f:0xf32a343031e680cf"
+                  jsaction="categorical.topResultClick" ved="0CG0Q8BcoADAE" vet="8982" class="cards-categorical-list-item"
+                  jsl="$x 6;$t t-pv18NtGjlwk;$x 0;" jstid="221">
+                      <div class="cards-categorical-list-item-title cards-strong" jsl="$x 3;"
+                      jsan="7.cards-categorical-list-item-title,7.cards-strong" jstid="201">
+                          <span jsl="$x 4;" jstid="202">
+                              Fireside Grill &amp; Sports Bar
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-title cards-strong" jsl="$x 3;"
+                      jsan="7.cards-categorical-list-item-title,7.cards-strong" jstid="201">
+                          <span jsl="$x 4;" jstid="202">
+                              Restaurant
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-info-line-1">
+                          <span jsl="$x 8;" jstid="206">
+                              3939 E Henrietta Rd, Henrietta, NY 14467
+                          </span>
+                      </div>
+                      <img src="https://lh4.googleusercontent.com/-YdfkdAjUL_Q/VGJOdU4IYBI/AAAAAAAAAAY/GokISL_Y6hk/w176-h176-p/542248_1377337592490956_1252981838_n.jpg"
+                      class="cards-categorical-list-item-image" jsl="$x 22;" jstid="220" data-mce-src="https://lh4.googleusercontent.com/-YdfkdAjUL_Q/VGJOdU4IYBI/AAAAAAAAAAY/GokISL_Y6hk/w176-h176-p/542248_1377337592490956_1252981838_n.jpg">
+                  </div>
+              </div>
+              <div data-list-index="6" jsaction="mousemove:categorical.hoverListItem;mouseout:categorical.unhoverListItem;focus:categorical.hoverListItem;blur:categorical.unhoverListItem"
+              jsinstance="6" jsl="$x 4;" jstid="223">
+                  <hr class="horizontal-line cards-categorical-list-item-line" jsl="$x 5;"
+                  jstid="224">
+                  <div data-entity-title="Buffalo Wild Wings" data-entity-featureid="0x89d14b0541a09eff:0xaf555c27d255c400"
+                  jsaction="categorical.topResultClick" ved="0CIcBEPAXKAAwBQ" vet="8982"
+                  class="cards-categorical-list-item" jsl="$x 6;$t t-pv18NtGjlwk;$x 0;" jstid="253">
+                      <div class="cards-categorical-list-item-title cards-strong" jsl="$x 3;"
+                      jsan="7.cards-categorical-list-item-title,7.cards-strong" jstid="227">
+                          <span jsl="$x 4;" jstid="228">
+                              Buffalo Wild Wings
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-info-line-1">
+                          <span class="cards-categorical-separator" jsl="$x 8;" jsan="7.cards-categorical-separator"
+                          jstid="238">
+                              Chicken Wings Restaurant
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-overview" jsl="$x 16;" jsan="7.cards-categorical-list-item-overview"
+                      jstid="246">
+                          Sports-bar chain serving American fare
+                      </div>
+                      <div class="cards-categorical-list-item-address" jsl="$x 20;" jstid="250">
+                          <span jsl="$x 21;" jstid="251">
+                              780 Jefferson Rd, Rochester, NY 14623
+                          </span>
+                      </div>
+                      <img src="https://lh3.googleusercontent.com/-JeSRZfe5pQY/U7jbCcdtw2I/AAAAAAAA3AY/tzW0_6NYob4/w176-h176-p/photo.jpg"
+                      class="cards-categorical-list-item-image" jsl="$x 22;" jstid="252" data-mce-src="https://lh3.googleusercontent.com/-JeSRZfe5pQY/U7jbCcdtw2I/AAAAAAAA3AY/tzW0_6NYob4/w176-h176-p/photo.jpg">
+                  </div>
+              </div>
+              <div data-list-index="7" jsaction="mousemove:categorical.hoverListItem;mouseout:categorical.unhoverListItem;focus:categorical.hoverListItem;blur:categorical.unhoverListItem"
+              jsinstance="7" jsl="$x 4;" jstid="255">
+                  <hr class="horizontal-line cards-categorical-list-item-line" jsl="$x 5;"
+                  jstid="256">
+                  <div data-entity-title="Papaya Asian Kitchen &amp; Bar" data-entity-featureid="0x89d14b7514fbdc63:0x6f116d1666b057b9"
+                  jsaction="categorical.topResultClick" ved="0CKcBEPAXKAAwBg" vet="8982"
+                  class="cards-categorical-list-item" jsl="$x 6;$t t-pv18NtGjlwk;$x 0;" jstid="286">
+                      <div class="cards-categorical-list-item-title cards-strong" jsl="$x 3;"
+                      jsan="7.cards-categorical-list-item-title,7.cards-strong" jstid="259">
+                          <span jsl="$x 4;" jstid="260">
+                              Papaya Asian Kitchen &amp; Bar
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-info-line-1">
+                          <span class="cards-categorical-separator" jsl="$x 8;" jsan="7.cards-categorical-separator"
+                          jstid="271">
+                              Bar
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-address" jsl="$x 20;" jstid="283">
+                          <span jsl="$x 21;" jstid="284">
+                              270 Miracle Mile Dr, Rochester, NY 14623
+                          </span>
+                      </div>
+                      <img src="https://lh3.googleusercontent.com/-eRcQti7WPP0/UsXK1HYd8hI/AAAAAAAAZLI/UEWwMQ69vsw/w176-h176-p/photo.jpg"
+                      class="cards-categorical-list-item-image" jsl="$x 22;" jstid="285" data-mce-src="https://lh3.googleusercontent.com/-eRcQti7WPP0/UsXK1HYd8hI/AAAAAAAAZLI/UEWwMQ69vsw/w176-h176-p/photo.jpg">
+                  </div>
+              </div>
+              <div data-list-index="8" jsaction="mousemove:categorical.hoverListItem;mouseout:categorical.unhoverListItem;focus:categorical.hoverListItem;blur:categorical.unhoverListItem"
+              jsinstance="8" jsl="$x 4;" jstid="288">
+                  <hr class="horizontal-line cards-categorical-list-item-line" jsl="$x 5;"
+                  jstid="289">
+                  <div data-entity-title="MacGregors' Grill &amp; Tap Room" data-entity-featureid="0x89d14b7cd747a46f:0x6966071bacc3931f"
+                  jsaction="categorical.topResultClick" ved="0CMMBEPAXKAAwBw" vet="8982"
+                  class="cards-categorical-list-item" jsl="$x 6;$t t-pv18NtGjlwk;$x 0;" jstid="318">
+                      <div class="cards-categorical-list-item-title cards-strong" jsl="$x 3;"
+                      jsan="7.cards-categorical-list-item-title,7.cards-strong" jstid="292">
+                          <span jsl="$x 4;" jstid="293">
+                              MacGregors' Grill &amp; Tap Room
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-info-line-1">
+                          <span class="cards-categorical-separator" jsl="$x 8;" jsan="7.cards-categorical-separator"
+                          jstid="303">
+                              Bar &amp; Grill
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-overview" jsl="$x 16;" jsan="7.cards-categorical-list-item-overview"
+                      jstid="311">
+                          Sports bar &amp; grill aimed at beer lovers
+                      </div>
+                      <div class="cards-categorical-list-item-address" jsl="$x 20;" jstid="315">
+                          <span jsl="$x 21;" jstid="316">
+                              300 Jefferson Rd, Rochester, NY 14623
+                          </span>
+                      </div>
+                      <img src="https://lh6.googleusercontent.com/-wx2Tum8H6js/U-JgpVIax2I/AAAAAAAA8co/DfNvAQAqCOM/w176-h176-p/photo.jpg"
+                      class="cards-categorical-list-item-image" jsl="$x 22;" jstid="317" data-mce-src="https://lh6.googleusercontent.com/-wx2Tum8H6js/U-JgpVIax2I/AAAAAAAA8co/DfNvAQAqCOM/w176-h176-p/photo.jpg">
+                  </div>
+              </div>
+              <div data-list-index="9" jsaction="mousemove:categorical.hoverListItem;mouseout:categorical.unhoverListItem;focus:categorical.hoverListItem;blur:categorical.unhoverListItem"
+              jsinstance="9" jsl="$x 4;" jstid="320">
+                  <hr class="horizontal-line cards-categorical-list-item-line" jsl="$x 5;"
+                  jstid="321">
+                  <div data-entity-title="The Distillery" data-entity-featureid="0x89d14abe398a5631:0x97823e3205fc350d"
+                  jsaction="categorical.topResultClick" ved="0COUBEPAXKAAwCA" vet="8982"
+                  class="cards-categorical-list-item" jsl="$x 6;$t t-pv18NtGjlwk;$x 0;" jstid="350">
+                      <div class="cards-categorical-list-item-title cards-strong" jsl="$x 3;"
+                      jsan="7.cards-categorical-list-item-title,7.cards-strong" jstid="324">
+                          <span jsl="$x 4;" jstid="325">
+                              The Distillery
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-info-line-1">
+                          <span class="cards-categorical-separator" jsl="$x 8;" jsan="7.cards-categorical-separator"
+                          jstid="335">
+                              American Restaurant
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-overview" jsl="$x 16;" jsan="7.cards-categorical-list-item-overview"
+                      jstid="343">
+                          High-energy hangout for sports &amp; brews
+                      </div>
+                      <div class="cards-categorical-list-item-address" jsl="$x 20;" jstid="347">
+                          <span jsl="$x 21;" jstid="348">
+                              3010 S Winton Rd, Rochester, NY 14623
+                          </span>
+                      </div>
+                      <img src="https://lh3.googleusercontent.com/-24FIeK6Szto/UyI7GMgkCbI/AAAAAAAQCD0/b5GaMmrU4Ow/w176-h176-p/photo.jpg"
+                      class="cards-categorical-list-item-image" jsl="$x 22;" jstid="349" data-mce-src="https://lh3.googleusercontent.com/-24FIeK6Szto/UyI7GMgkCbI/AAAAAAAQCD0/b5GaMmrU4Ow/w176-h176-p/photo.jpg">
+                  </div>
+              </div>
+              <div data-list-index="10" jsaction="mousemove:categorical.hoverListItem;mouseout:categorical.unhoverListItem;focus:categorical.hoverListItem;blur:categorical.unhoverListItem"
+              jsinstance="*10" jsl="$x 4;" jstid="352">
+                  <hr class="horizontal-line cards-categorical-list-item-line" jsl="$x 5;"
+                  jstid="353">
+                  <div data-entity-title="The Melting Pot" data-entity-featureid="0x89d14b75500865b3:0x9bcc98c25f1cdef0"
+                  jsaction="categorical.topResultClick" ved="0CIUCEPAXKAAwCQ" vet="8982"
+                  class="cards-categorical-list-item" jsl="$x 6;$t t-pv18NtGjlwk;$x 0;" jstid="383">
+                      <div class="cards-categorical-list-item-title cards-strong" jsl="$x 3;"
+                      jsan="7.cards-categorical-list-item-title,7.cards-strong" jstid="356">
+                          <span jsl="$x 4;" jstid="357">
+                              The Melting Pot
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-info-line-1">
+                          <span class="cards-categorical-separator" jsl="$x 8;" jsan="7.cards-categorical-separator"
+                          jstid="368">
+                              Fondue Restaurant
+                          </span>
+                      </div>
+                      <div class="cards-categorical-list-item-overview" jsl="$x 16;" jsan="7.cards-categorical-list-item-overview"
+                      jstid="376">
+                          Casual restaurant chain for fondue meals
+                      </div>
+                      <div class="cards-categorical-list-item-address" jsl="$x 20;" jstid="380">
+                          <span jsl="$x 21;" jstid="381">
+                              290 Miracle Mile Dr, Rochester, NY 14623
+                          </span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div data-role="tabbar" data-iconpos="bottom" data-theme="a">
+          <ul>
+              <li>
+                  <a href="#page6" data-transition="fade" data-theme="" data-icon="alert">
+                      Browse
+                  </a>
+              </li>
+              <li>
+                  <a href="#page4" data-transition="fade" data-theme="" data-icon="star">
+                      MyTap
+                  </a>
+              </li>
+              <li>
+                  <a href="#page5" data-transition="fade" data-theme="" data-icon="search">
+                      Search
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </div>
+  <div data-role="page" data-control-title="Search" id="page5">
+      <div data-theme="f" data-role="header" data-position="fixed">
+          <h3>
+              Search
+          </h3>
+      </div>
+      <div data-role="content">
+          <div data-role="fieldcontain" data-controltype="searchinput">
+              <input name="" id="searchinput2" placeholder="Search by bar or beer..."
+              value="" type="search">
+          </div>
+          <h3>
+              Advanced Search Options
+          </h3>
+          <div id="checkboxes1" data-role="fieldcontain" data-controltype="checkboxes">
+              <fieldset data-role="controlgroup" data-type="vertical">
+                  <legend>
+                      Choose:
+                  </legend>
+                  <input id="checkbox1" name="" type="checkbox">
+                  <label for="checkbox1">
+                      International Beer
+                  </label>
+                  <input id="checkbox2" name="" type="checkbox">
+                  <label for="checkbox2">
+                      Domestic Beer
+                  </label>
+              </fieldset>
+          </div>
+          <div data-role="fieldcontain" data-controltype="slider">
+              <label for="slider1">
+                  Price Range:
+              </label>
+              <input id="slider1" type="range" name="slider" value="1" min="0" max="5"
+              data-highlight="false">
+          </div>
+          <h3>
+              Search by Location
+          </h3>
+          <div id="googlemapsjs2" class="google-map" style="width: 288px; height: 200px; margin-left: auto; margin-right: auto">
+          </div>
+          <script type="text/javascript">
+                  window.CodiqaControls && window.CodiqaControls.register('googlemaps', 'googlemapsjs2', {
+              ready: function(control) {
+  
+                  control.options = {
+                      zoom: 10,
+                      mapTypeId: google.maps.MapTypeId.ROADMAP
+                  };
+  
+                  control.el = document.getElementById(control._id);
+                  control.map = new google.maps.Map(control.el, control.options);
+  
+                  var geocoder = new google.maps.Geocoder();
+                  geocoder.geocode({
+                      'address': 'Henrietta, NY'
+                  }, function(results, status) {
+                      if (status == google.maps.GeocoderStatus.OK) {
+  
+                          var marker = new google.maps.Marker({
+                              map: control.map,
+                              position: results[0].geometry.location
+                          });
+                          control.center = results[0].geometry.location;
+                          control.map.setCenter(control.center);
+                      }
+                  });
+  
+              }
+          });
+          </script>
+          <ul data-role="listview" data-divider-theme="f" data-inset="true">
+              <li data-role="list-divider" role="heading">
+                  Distance
+              </li>
+              <li data-theme="">
+                  <a href="#page1" data-transition="slide">
+                      5 miles
+                  </a>
+              </li>
+              <li data-theme="c">
+                  <a href="#page1" data-transition="slide">
+                      15 miles
+                  </a>
+              </li>
+              <li data-theme="c">
+                  <a href="#page1" data-transition="slide">
+                      25 miles
+                  </a>
+              </li>
+              <li data-theme="c">
+                  <a href="#page1" data-transition="slide">
+                      50 miles
+                  </a>
+              </li>
+              <li data-theme="c">
+                  <a href="#page1" data-transition="slide">
+                      100 miles
+                  </a>
+              </li>
+          </ul>
+      </div>
+      <div data-role="tabbar" data-iconpos="bottom" data-theme="a">
+          <ul>
+              <li>
+                  <a href="#page6" data-transition="fade" data-theme="" data-icon="alert">
+                      Browse
+                  </a>
+              </li>
+              <li>
+                  <a href="#page4" data-transition="fade" data-theme="" data-icon="star">
+                      MyTap
+                  </a>
+              </li>
+              <li>
+                  <a href="#page5" data-transition="fade" data-theme="" data-icon="search">
+                      Search
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </div>
+  <div data-role="page" data-control-title="Beer_60_Minute" id="page8">
+      <div data-theme="f" data-role="header">
+          <a data-role="button" data-inline="true" data-theme="f" href="#page4"
+          data-icon="star" data-iconpos="notext" class="ui-btn-right">
+          </a>
+          <h3>
+              60 Minute
+          </h3>
+      </div>
+      <div data-role="content">
+          <h1>
+              60 Minute IPA
+          </h1>
+          <h2 id="Dogfish Head Brewery">
+              Dogfish Head Brewery
+          </h2>
+          <h3 class="light">
+              Style: American IPA
+          </h3>
+          <h3 class="light">
+              ABV: 6.00%
+          </h3>
+          <h3 class="light">
+              Location: Delaware, USA
+          </h3>
+          <div style="" data-controltype="image">
+              <img style="width: 150px; height: 300px" src="http://cdn.beeradvocate.com/im/beers/6108.jpg">
+          </div>
+      </div>
+      <div data-role="tabbar" data-iconpos="bottom" data-theme="a">
+          <ul>
+              <li>
+                  <a href="#page6" data-transition="fade" data-theme="" data-icon="alert">
+                      Browse
+                  </a>
+              </li>
+              <li>
+                  <a href="#page4" data-transition="fade" data-theme="" data-icon="star">
+                      MyTap
+                  </a>
+              </li>
+              <li>
+                  <a href="#page5" data-transition="fade" data-theme="" data-icon="search">
+                      Search
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </div>
+  <div data-role="page" data-control-title="Beer_PBR" id="page9">
+      <div data-theme="f" data-role="header">
+          <a data-role="button" data-inline="true" data-theme="f" href="#page4"
+          data-icon="star" data-iconpos="notext" class="ui-btn-right">
+          </a>
+          <h3>
+              Pabst Blue Ribbon
+          </h3>
+      </div>
+      <div data-role="content">
+          <h1>
+              Pabst Blue Ribbon
+          </h1>
+          <h2>
+              Pabst Brewing Company
+          </h2>
+          <h3 class="light">
+              Style: American Adjunct Lager
+          </h3>
+          <h3 class="light">
+              ABV: 4.47%
+          </h3>
+          <h3 class="light">
+              Location: Wisconsin, USA
+          </h3>
+          <div style="" data-controltype="image">
+              <img style="width: 150px; height: 300px" src="http://cdn.beeradvocate.com/im/beers/1331.jpg">
+          </div>
+      </div>
+      <div data-role="tabbar" data-iconpos="bottom" data-theme="a">
+          <ul>
+              <li>
+                  <a href="#page6" data-transition="fade" data-theme="" data-icon="alert">
+                      Browse
+                  </a>
+              </li>
+              <li>
+                  <a href="#page4" data-transition="fade" data-theme="" data-icon="star">
+                      MyTap
+                  </a>
+              </li>
+              <li>
+                  <a href="#page5" data-transition="fade" data-theme="" data-icon="search">
+                      Search
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </div>
+  <div data-role="page" data-control-title="Beer_Golden_Monkey" id="page10">
+      <div data-theme="f" data-role="header">
+          <a data-role="button" data-inline="true" data-theme="f" href="#page4"
+          data-icon="star" data-iconpos="notext" class="ui-btn-right">
+          </a>
+          <h3>
+              Golden Monkey
+          </h3>
+      </div>
+      <div data-role="content">
+          <h1>
+              Golden Monkey
+          </h1>
+          <h2>
+              Victory Brewing Company
+          </h2>
+          <h3 class="light">
+              Style: Tripel
+          </h3>
+          <h3 class="light">
+              ABV: 9.50%
+          </h3>
+          <h3 class="light">
+              Location: Pennsylvania, USA
+          </h3>
+          <div style="" data-controltype="image">
+              <img style="width: 126px; height: 300px" src="http://cdn.beeradvocate.com/im/beers/1003.jpg">
+          </div>
+      </div>
+      <div data-role="tabbar" data-iconpos="bottom" data-theme="a">
+          <ul>
+              <li>
+                  <a href="#page6" data-transition="fade" data-theme="" data-icon="alert">
+                      Browse
+                  </a>
+              </li>
+              <li>
+                  <a href="#page4" data-transition="fade" data-theme="" data-icon="star">
+                      MyTap
+                  </a>
+              </li>
+              <li>
+                  <a href="#page5" data-transition="fade" data-theme="" data-icon="search">
+                      Search
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</body>
+</html>
